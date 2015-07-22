@@ -4,8 +4,8 @@
 
 ## TODO
 
-[ ] Some kind of debunce for autorun
-[ ] Create a filter
+- [ ] Some kind of debunce for autorun
+- [ ] Create a filter
 
 ## License
 
