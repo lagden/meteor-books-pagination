@@ -60,7 +60,8 @@ Template.books.helpers
 Template.books.events
   'click .prior': (event, instance) ->
     event.preventDefault()
-    $pageRange.triggerHandler 'change', [-1]
+    $pageRange = instance.$ '#pageRange'
+    $pageRange.trigger 'change', [-1]
     return
 
   'click .next': (event, instance) ->
