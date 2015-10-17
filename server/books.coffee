@@ -13,7 +13,7 @@ if Books.find().count() is 0
 
 # Publish - Paginação
 Meteor.publish 'paginacao', (page = 1, limit) ->
-  # Meteor._sleepForMs 2000
+  Meteor._sleepForMs 2000
   Books.paginacao page, limit
 
 # Publish - Total de livros

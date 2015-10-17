@@ -1,48 +1,48 @@
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Apenas um show">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Books Pagination</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Apenas um show">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Books Pagination</title>
 </head>
 
 <body>
-  <h1>Lista de livros</h1>
-  {{> books}}
+	<h1>Lista de livros</h1>
+	{{> books}}
 </body>
 
 <template name="books">
-  <div class="modalLayout {{#if isReady false}}modalLayout--open{{/if}}">
-    Carregando...
-  </div>
-  {{#if hasBooks}}
-    <div class="gs">
-      <ul class="lista">
-        {{#each lista}}
-          <li class="lista__item">{{name}}</li>
-        {{/each}}
-      </ul>
-    </div>
-    <div class="gs flex flex--center flex--between mb-20">
-      <div class="flex__child center btns">
-        <button class="prior btn">←</button>
-      </div>
-      <div class="pad-5 flex__child--two center">
-        <input name="pageRange" id="pageRange" class="pageRange" type="range" step="1" min="1" max="{{paginacao.pages}}" value="{{paginacao.page}}">
-        <output for="pageRange">1</output>
-      </div>
-      <div class="flex__child center btns">
-        <button class="next btn">→</button>
-      </div>
-    </div>
-    <div class="gs center">
-      <div class="third">Items por página: {{paginacao.limit}}</div>
-      <div class="third">Pagina: {{paginacao.page}} de {{paginacao.pages}}</div>
-      <div class="third">Total: {{paginacao.total}}</div>
-    </div>
-  {{else}}
-    <div class="gs center">
-      Não tem livros! :(
-    </div>
-  {{/if}}
+	<div class="modalLayout {{#if isReady false}}modalLayout--open{{/if}}">
+		Carregando...
+	</div>
+	{{#if hasBooks}}
+		<div class="gs">
+			<ul class="lista">
+				{{#each lista}}
+					<li class="lista__item">{{name}}</li>
+				{{/each}}
+			</ul>
+		</div>
+		<div class="gs flex flex--center flex--between mb-20">
+			<div class="flex__child center btns">
+				<button class="prior btn">←</button>
+			</div>
+			<div class="pad-5 flex__child--two center">
+				<input name="pageRange" id="pageRange" class="pageRange" type="range" step="1" min="1" max="{{paginacao.pages}}" value="{{paginacao.page}}">
+				<output for="pageRange">1</output>
+			</div>
+			<div class="flex__child center btns">
+				<button class="next btn">→</button>
+			</div>
+		</div>
+		<div class="gs center">
+			<div class="third">Items por página: {{paginacao.limit}}</div>
+			<div class="third">Pagina: {{paginacao.page}} de {{paginacao.pages}}</div>
+			<div class="third">Total: {{paginacao.total}}</div>
+		</div>
+	{{else}}
+		<div class="gs center">
+			Não tem livros! :(
+		</div>
+	{{/if}}
 </template>

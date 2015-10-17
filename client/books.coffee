@@ -77,6 +77,7 @@ Template.books.events
     v = parseInt target.value, 10
     if data
       v += data
+      v = 1 if v == 0
     next.textContent = v
     pagina v, instance
 
